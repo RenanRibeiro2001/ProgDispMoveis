@@ -10,11 +10,21 @@ public class user {
     private String userName;
     private String email;
 
+    private Address address;
+
     public user(int id, String name, String userName, String email) {
         this.id = id;
         this.name = name;
         this.userName = userName;
         this.email = email;
+    }
+
+    public user(int id, String name, String userName, String email, Address address) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.address = address;
     }
 
     public int getId() {
@@ -49,9 +59,17 @@ public class user {
         this.email = email;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @NonNull
     @Override
     public String toString() {
-        return "Name:"+ name + ", Username:"+ userName + ", email:" + email + ", id:" + id;
+        return "Name:"+ name + ", Username:"+ userName + ", email:" + email + ", id:" + id + ", address:" + address;
     }
 }

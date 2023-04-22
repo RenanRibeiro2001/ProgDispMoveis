@@ -6,7 +6,9 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tarefan1.models.Address;
 import com.example.tarefan1.models.user;
 import com.example.tarefan1.repositories.UserRepository;
 
@@ -25,6 +27,12 @@ public class UserService {
                     json.getString("name"),
                     json.getString("username"),
                     json.getString("email"));
+            if(json.has("address")){
+                JSONObject jsonAdd = json.getJSONObject("address");
+                JSONObject jsonGeo = json.getJSONObject("geo");
+                Address address = new Address("","", "", "", null);
+                User.setAddress(address);
+            }
         } catch (JSONException e) {
             System.out.println("Erro no Json !!" + e.getMessage());
         }
