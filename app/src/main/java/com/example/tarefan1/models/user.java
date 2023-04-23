@@ -9,7 +9,6 @@ public class user {
     private String name;
     private String userName;
     private String email;
-
     private Address address;
 
     public user(int id, String name, String userName, String email) {

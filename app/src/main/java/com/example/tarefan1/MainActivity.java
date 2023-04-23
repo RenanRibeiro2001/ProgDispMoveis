@@ -29,4 +29,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(in);
     }
 
+    public void onAula4(View view) {
+        Intent in = new Intent(MainActivity.this, Aula4.class);
+        startActivity(in);
+    }
 }
